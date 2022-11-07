@@ -15,7 +15,7 @@ npm install leaflet-irregular-channel -S
 ````
 including
 ````
-import 'leaflet-irregular-channel'
+import irregularChannel from 'leaflet-irregular-channel';
 ````
 <h4>Usage example</h4>
 
@@ -40,5 +40,5 @@ import 'leaflet-irregular-channel'
       widthRight: 200
     } 
   ]
-  let channelInstance = L.irregularChannel(data, map);
+  let channelInstance = irregularChannel(data, map);
 ````

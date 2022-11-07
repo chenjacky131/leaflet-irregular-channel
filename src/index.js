@@ -17,9 +17,9 @@ import {IrregularChannel} from './irregular-channel'
   }
 }(function (L) {
   // implement your plugin
-  let fun = function(data,map,options){
+  const myPlugin = function(data,map,options){
     return new IrregularChannel(data,map,options)
   }
   // return your plugin when you are done
-  return fun;
+  return myPlugin;
 }, window));
