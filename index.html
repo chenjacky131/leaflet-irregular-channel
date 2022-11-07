@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=`, initial-scale=1.0">
+  <title>leaflet-irregular-channel demo</title>
+  <style>
+    html,body,.map{
+      height:100%;
+      width: 100%;
+      overflow: hidden;
+      margin: 0;
+    }    
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.2/dist/leaflet.css">
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.2/dist/leaflet-src.min.js"></script>
+</head>
+<body>  
+  <div id="map" class="map"></div>
+  <script src="./dist/irregular-channel.js"></script>
+  <script>
+    window.onload = function(){
+      const latlngXiamen = L.latLng([24.471388765957105, 118.10761928558351]);
+      const map = L.map("map", {
+        center: latlngXiamen,
+        zoom: 12
+      });
+      L.control.scale({
+        imperial: false
+      }).addTo(map);
+      //  添加地图图层
+      const tileLayer = L.tileLayer(
+      "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+      {
+        attribution: false,
+        maxZoom: 18,
+        minZoom: 1,
+        id: "mapbox/satellite-v9",
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken:
+          "pk.eyJ1IjoiY2hlbmphY2t5MTMxIiwiYSI6ImNrbnBic3Z6ZTAxbjUydm51c2t1eDV3aXoifQ.jGcoMhAq6utjY-yjQmF9pw",
+        detectRetina: true,
+      }
+      );
+      tileLayer.addTo(map);
+      
+      const data = [
+        {
+          lat: 24.43683529482618, 
+          lng: 118.04363250732423,
+          widthLeft: 100,
+          widthRight: 100
+        },
+        {
+          lat: 24.396507684805687, 
+          lng: 118.12808990478517,
+          widthLeft: 200,
+          widthRight: 100
+        },
+        {
+          lat: 24.473400349324073,
+          lng: 118.21907043457033,
+          widthLeft: 100,
+          widthRight: 200
+        } 
+      ];
+      L.irregularChannel(data, map);
+    }
+  </script>
+</body>
+</html>
