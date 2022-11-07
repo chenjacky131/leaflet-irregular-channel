@@ -1,6 +1,6 @@
 {
   "name": "leaflet-irregular-channel",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "a leaflet plugin for creating a irregular channel",
   "main": "dist/irregular-channel.js",
   "scripts": {
