@@ -2,12 +2,13 @@
 
 a leaflet plugin for creating a irregular channel
 
-####Requirements
+<h4>Requirements</h4>
 * leaflet1.7.1
 
-[demo](http://www.baidu.com) 
+[demo](https://chenjacky131.github.io/leaflet-irregular-channel/index.html) 
 
-####Instructions
+<h4>Instructions</h4>
+
 installing
 ````
 npm install leaflet-irregular-channel -S
@@ -16,7 +17,8 @@ including
 ````
 import 'leaflet-irregular-channel'
 ````
-####Usage example
+<h4>Usage example</h4>
+
 ````
   const data = [
     {
@@ -40,4 +42,3 @@ import 'leaflet-irregular-channel'
   ]
   let channelInstance = L.irregularChannel(data, map);
 ````
-####Api reference
